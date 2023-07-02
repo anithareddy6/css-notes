@@ -1,0 +1,90 @@
+/*SPECIFICITY & SELECTORS
+
+SPECIFICITY
+1.universal(*)=-lowest specificity value. ie)all other type of selectors will override it
+-the only declaration the universal selector can override is inherited styles
+2.type(P)
+3.class(.example)
+4.id(#example)
+    
+UNIVERSAL SELECTOR-matches to all element of any type
+*{}
+TAG SELECTOR-matches with tags
+hi{},p{}etc
+CLASS SELECTOR-reusable
+.class name(hii){}
+ID SELECTOR-used only once per page
+#id name(Hello){}
+
+USING CLASS WITH TAG
+
+  HTML
+ <p class="bottle">hiii hello</p>
+  CSS
+ .bottle{
+    color:pink;}
+ 
+USING MULTIPLE CLASSES
+ 
+   HTML
+    <div class="hi hii">what a queen</div>
+    <div class="hi">jvfdfafg</div>
+   CSS
+    .hi{ color:black;}=apply style to  both class
+    .hii{color:blue;}=apply style to single class
+
+DOM STYLING
+
+   HTML
+    <section>
+    <p>hii</p>
+    <h1>hededn</h1>
+    <ul>
+    <li>item</li>
+    <li>roe</li>
+    </ul>
+    </section>
+   CSS
+    1)section ul{
+    color: blue;}
+    2)section p,h1{
+    color: blue;}
+another
+   HTML
+    <section class="container">
+    <p>hiii</p>
+    <h1>sdshdba<span>sfssf</span>bsdhdbd</h1>
+    </section>
+   CSS
+    .container p,h1{
+    color: blue;} 
+    .section p,h1{
+    color: blue;} 
+    span{
+    color: black;}
+    .container span{
+    color: blue;} 
+
+GROUPING SELECTOR
+     h1,h2,h3{}
+
+COMBINING SELECTOR
+  HTML
+     <p class="intro">into hi</p>
+  CSS
+ p.intro{
+      color: khaki}
+
+INHERITANCE
+   HTML
+    <body>
+    <p>hiiii</p>
+    <h4>hfyf</h4>
+    <h6>gvgvvhvgj</h6>
+    </body>
+   CSS
+    body{
+    font-size: 200px;}
+
+*/
+

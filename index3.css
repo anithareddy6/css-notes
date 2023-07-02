@@ -1,0 +1,65 @@
+/* 
+OVERFLOW HIDDEN,DISPLAY FLOW-ROOT AND FLOAT-LEFT
+
+HTML
+    <div class="container">
+<div class="float">float me</div>
+<div class="float">float me</div>
+    </div>
+CSS
+.container{
+border: 2px solid black;
+width: 500px;
+margin :0 auto;
+overflow: hidden;-THIS AND BELOW DISPLAY USED TO REMOVE OVERFLOW
+display: flow-root;
+}
+
+.float{
+    background-color: aquamarine;
+    border: 1px solid white;
+    height: 60px;
+    width: 60px;
+    padding: 20px;
+    float: left;-USED TO FLOAT SIDE BY SIDE
+}
+
+
+LAYOUT AND BOX  MODEL
+
+HTML
+   <div class="wrapper">
+        <header>header</header>
+        <aside>sidebar</aside>
+        <article>main content</article>
+        <footer>footer</footer>
+    </div>
+CSS
+.wrapper{
+    font-size: 20px;
+    width: 800px;
+    margin: 0 auto;
+}
+header,footer{
+    background-color:gold;
+    height:50px;
+}
+
+aside{
+    background-color: cadetblue;
+    height: 250px;
+    width: 200px;
+   float: left;
+}
+article{
+    background-color: blanchedalmond;
+    height: 210px;
+    width: 560px;
+   float:left;
+   padding: 20px;
+}
+
+footer{
+    clear: both;
+}
+*/

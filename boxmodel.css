@@ -1,0 +1,130 @@
+/* 
+
+INLINE LEVEL
+BLOCK LEVEL
+INLINE BLOCK LEVEL
+
+basically div is a block element and span is inline element
+
+INLINE LEVEL-it will only take content width or space of line,not take full space or width and we cant able to set height and width in inline
+BLOCK LEVEL-it will take full space or width of the line and can able to set height and width
+INLINE-BLOCK LEVEL-it will take both characteristic of inline and block ie)it will display as inline and inline and can able to set height and width
+
+ HTML
+  <div>inline</div>
+  <div>inline</div>
+  <span>inline inlonr</span>
+  <span>inline inlonr</span>
+ CSS  
+  div{
+  background-color: green;
+  height: 30px;
+  width: 200px;
+  display:inline-block;}
+  span{
+  background-color: indianred;
+  height: 30px;
+  width: 200px;
+  Display:block;}
+
+  TO REMOVE MARGIN
+
+HTML
+<h1 class="i">block</h1>
+<h1 class="u">blocks</h1>
+<span>inline</span>
+<span>inline</span>
+CSS
+h1{
+background-color: cyan;
+border: 8px solid black;
+padding: 20px;}
+span{
+background-color: gold;
+border: 8px solid black;}
+.i{
+    margin-bottom: 0;
+}
+.u{
+    margin-top: 0;}
+
+TO REMOVE MARGIN SPACES
+BY USING -value
+HTML
+<span>inline</span>
+<span class="o">inline</span>
+CSS
+span{
+    background-color: gold;
+    border: 2px solid black;
+    padding: 20PX;
+    margin: 0px;
+   display: inline-block;
+}
+.o{
+    margin-left: -5px;
+}
+another-by using font size 0  in wrapand adding font size in span as per below
+HTML
+<div class="wrap">
+<h1 class="i">block</h1>
+<h1 class="u">blocks</h1>
+<span>inline</span>
+<span class="o">inline</span>
+</div>
+CSS
+span{
+    background-color: gold;
+    border: 2px solid black;
+    padding: 20PX;
+    margin: 0px;
+   display: inline-block;
+   font-size: 13px;
+}
+.wrap{
+font-size: 0;
+}
+another by adding span 2 lines in same 1 line
+HTML
+<div class="wrap">
+<h1 class="i">block</h1>
+<h1 class="u">blocks</h1>
+<span>inline</span><span class="o">inline</span>
+</div>
+css
+span{
+    background-color: gold;
+    border: 2px solid black;
+    padding: 20PX;
+    margin: 0px;
+   display: inline-block;
+   font-size: 13px;
+}
+
+TO KEEP MARGIN:AUTO
+
+.example{
+  width:1000px;
+  margin:0 auto;//top&bottom,left and right
+to place element anywhere
+  width:1000px;
+  margin:200px auto;//top&bottom,left and right-we can place it by entering values like this
+
+TO KEEP FONT-FAMILY
+   Body{
+    font-family: helvetica,arial,sans-serif;
+   }
+
+GENERIC font-family names
+   serif (serif fonts)
+   sans-serif(sans-serif fonts)
+   cursive(script or decorative fonts)
+   fantasy(decorative fonts)
+   monospace(monospace fonts)
+
+
+
+
+
+
+*/

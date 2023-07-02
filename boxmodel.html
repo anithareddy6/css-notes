@@ -1,0 +1,294 @@
+<!-- BOX MODEL
+
+    BOX (has 4 parts)
+
+ 1.CONTENT-contains actual content added between the html tags,such as txt,img etc
+ 2.PADDING-it surrounds the content area and this space is included inside of the element
+ 3.BORDER-it surrounds the padding area
+ 4.MARGIN(TRANSPARENT)-surrounds the entire element
+
+
+PROPERTIES OF BOX 
+ 1.Width-used to set width of the content area
+ 2.Height-used to set height of the content area
+ 3.padding-adds or removes the space within the element
+ 4.margin-adds or removes space around the element
+ 5.border-is added between padding and margin
+
+WIDTH AND HEIGHT:
+  The width and height properties change the size of the content box.inline elements require the display property
+   div{
+    width:100px;
+    height:100px;}
+   span{
+    width:100px;
+    height:100px;
+    display:block;
+    or
+    display:inline-block}
+
+PADDING:-all values must be a positive number,it does not accept negative value
+  Padding adds/removes space inside of the element but around the content box.
+   longhand syntax: 
+  padding-top:2px;
+   padding-right:2px;
+   padding-bottom:2px;
+   padding-left:2px;
+or 
+    shorthand syntax:
+   padding:2px 2px 2px 2px /top,right,bottom,left/
+The shorthand syntax can use 1-4 values.
+  padding:2px; /same on all sides/
+  padding:2px 10px; /top&bottom,right &left/
+  padding:2px 10px 5px;/top,right & left,bottom/
+  padding:2px 10px 5px 2px;/top,right,bottom,leeft/
+  
+we can also mix different types of length units
+  padding: 10px 2%;/top&button,right&left/
+
+VALID:
+ Padding:0px;
+ padding:0;
+ padding:2px 0;
+NOT VALID;
+  padding:2
+  padding:-10;
+
+MARGIN:same as padding but in addition to length and percentage values margin can also be used with the keyword auto and with negative values
+ Margin adds /remove space around the element.
+ Defaulty applies to left and right for inline(span),in that case we have to use dispaly:inline-block; to get four sides margin
+  longhand syntax:
+   margin-top:2px;
+   margin-right:2px;
+   margin-bottom:2px;
+   margin-left:2px;
+  Shorthand syntax:
+  margin:2px 2px 2px 2px; /top,right,bottom,leeft/
+  margin:2px 10px 5px; /top,right & left,bottom/
+  margin:2px 10px ;/top&bottom,right &left/
+  margin:2px ;/same on all sides/
+
+BORDER
+  The border property displays a border between the margin and padding
+  -the order of the values do not matter for short hand syntax
+ Shorthand
+   border:2px solid red
+  Longhand
+   border-width:2px;
+   border-style:solid;
+   border-color:red;
+BORDER-WIDTH PROPERTY
+   border-width:10px;
+   border-width:thin;
+   border-width:medium;
+   border-width:thick;
+BORDER-COLOR:
+   border-color: blue;
+   border-color:#000000
+BORDER-STYLE:
+   border-style:solid;
+   border-style:hidden;
+   border-style:dotted;
+   border-style:double;
+   border-style:groove;
+VALUES AND UNITS
+ For box properties,the <percentage> and <length> datatypes are used
+eg.
+ .container{width:1000px;}
+ .inside-container{width:50%/500px}
+
+ABSOLUTE<length>unit-if using for websites then stick with pixels
+ px-pixel,cm-centimeter,mm-millimeter,in-inch,width:1000px;
+ pc:pica(equal to 1/6 of an inch)
+ pt:point(equal to 1/72 of an inch)
+
+RELATIVE<LENGTH>UNIT-dependent on length of another element and also useful for making flexible layouts that display well in different screen sizes
+ em:represents inherited font-size of element
+ rem:represents the font-size of the root element
+ 1vw-1% of the width of the viewport
+ 1vh-1%of the height of the viewport
+ vmin-equal to the smaller of vw and vh
+ vmax-equal to the larger of vw and vh
+
+
+Inline ,blocK AND INLINE-BLOCK-level
+
+INLINE(span-is inline)
+ -takes up the same space as their content .it does not take full space or width of the line
+ -elements are displayed in a line,side by side starting from a left
+ -elements will only wrap when items cannot fit on same line with its container
+ -cant able to change height and width
+ SOME COMMON INLINE ELEMENTS ARE:<a><span>and <strong>
+
+BLOCK(div is block )
+ -same height as content,same width as container.it will take full space  or width of the line
+ -always starts on a new line and stack on top of each other
+ -majority of elements are block level
+ -can able to change height and width
+SOME COMMON ONES ARE:<p><h1><article><section>
+ 
+INLINE-BLOCK LEVEL-it will take both characteristic of inline and block ie)it will display as inline and can able to set height and width
+  
+THE DISPLAY PROPERTY
+  used to change the default behavior of inline and block-level elements
+
+TYPOGRAPHY
+  Arranging type for readability and to engage and communicate with the reader
+
+TYPEFACE
+  A set of fonts designed with common characteristics,composed of glyphs
+
+FIVE PROPERTIES OF TYPEFACES
+  -script,monospace,decorative,serif and sans-serif
+
+WEB-SAFE FONTS
+   Fonts that are commonly pre-installed on  the majority of computers and devices(eg arial,times new roman)
+   fonts may vary among operating systems
+
+FONT-WEIGHT-number values will map to the nearest typeface available
+
+   Light
+   regular
+   semi-bold
+   bold
+   extra-bold
+
+  font-weight: 100;//lightest or thinnest//
+  font-weight: 200;
+  font-weight: 300;
+  font-weight: 400;
+  font-weight: 500;
+  font-weight: 600;
+  font-weight: 700;
+  font-weight: 800;
+  font-weight: 900;//darkest or thickest//
+
+  100-thin
+  200-extra light(ultra light)
+  300-light
+  400-normal
+  500-medium
+  600-semi bold(demi bold)
+  700-bold
+  800-extra bold(ultra bold)
+  900-black(heavy)
+  
+FONT-WEIGHT KEYWORDS
+  
+  Normal-is equal to 400 and is also the default for body text
+  Bold-is equal to 700 and is the default for headings
+
+FONT-STYLE
+ 
+  used to add or remove an italic style.there are three values italic,oblique and normal
+   
+   p{font-style:italic;}-adds italic style
+   p{font-style:normal;}-removes italic style
+
+Web fonts with @font-face
+
+   -downloaded font files
+   -included in your project files just like other files(i.e images)
+   -declare and link to font files using @font-face
+
+  Syntax- @font-face{}
+    eg :
+     @font-face{
+      font-family:"my font";
+      src:url(my-font.woff);//relative path//
+      src:url(http://example.com/fonts/my-font.woff);//absolute path//
+     }
+or refer google fonts,select ur font style and copy link(<link href=...) and paste it in head tag  a line before our css link
+    and copy css link below and paste in css body {} 
+
+Font-size:px,em,rem
+
+    -different units for specifying the font size
+    -relative values are calculated based on the nearest ancestor element
+    -absolute values are fixed and not affected by ancestor elements
+
+  font-size:px
+    
+   -screens are measured in pixels
+   -absolute value,great for accuracy
+   -use whole numbers,avoid decimals
+   -browser default=16px
+
+  font-size:em
+    -named after the letter "m"
+    -relative unit
+    -can use whole numbers or decimal points
+    -1em=inherited font size
+
+  font-size:rem;
+    -root em
+    -relative unit
+    -only relative to the root element(<html>)
+    -not affected by parent or ancestor elements
+
+  font shorthand property(6)
+
+     font-style
+     font-size
+     font-weight
+     font-family
+     font-variant
+     line-height
+
+longhand vs shorthand
+
+ //shorthand//
+  font: italic small-caps bold 24px/1.5 helvetica,sans-serif'
+
+//longhand//
+  font-style: italic;
+  font-variant:small -caps;
+  font-weight:bold;
+  font-size:24px;
+  line-height: 1.5;
+  font-family:helvetica,sans-serif;
+
+FONT SHORTHAND SYNTAX RULES
+   
+  -ORDER MATTERS!font-style,font-variant,and font-weight must come before font-size
+  -font-variant=normal or small-caps only
+  -font-size/line-height
+  -font-family must be the last value specified
+  font:italic small-caps bold 24px/1.5 helvetica,sans-serif;
+find more info on mdn for  both below  and above points
+  -must include values for the font-size(24px) and font-family(helvetica)
+  -may optionally include values for font-style(italic),font-variant(small-caps),font weight(bold) and line-height
+   font:italic small-caps bold 24px/1.5 helvetica,sans-serif;
+
+TEXT -DECORATION(for more refer mdn)
+
+ syntax: text-decoration:none;//removes underline//
+
+ //shorthand//
+ text-decoration:underline red solid;
+ //longhand//
+ text-decoration-line:underlinee;
+ text-decoration-color:red;
+ text-decoration-style:solid;
+
+TEXT-ALIGN
+
+ - The text-align property can be used to align content within a block element(not in inline element unless u use the display property to change the behaviour)
+ - add it to the html  element itself or the parent element
+  
+ syntax:text-align{center;}-align content at left,right,center and bottom
+
+LINE-HEIGHT
+
+ - the line-height property sets the height of the space between  two lines of text
+ - closely relative to font-size
+ - can use different value types(px,%,ems,rems,or unitless)
+
+ syntax:line-height{10px;}-create space between each line
+
+-->
+
+<!-- 
+
+
+ -->

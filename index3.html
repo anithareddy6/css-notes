@@ -1,0 +1,351 @@
+<!-- 
+
+FLOAT AND CLEAR PROPERTIES:
+
+FLOAT:LEFT;-it will add the below element to its side by side
+ float property can be used to change the normal document flow by floating elements to the left or right side of its container
+
+  .clear{clear:both;}-it will clear paragaraph if headings or paragraph available around the images
+
+FLOAT AND COLLAPSED CONTAINER
+
+  OVERFLOW
+    overflow is actually used to specify how to display content that doesn't fit in its container
+
+POSITION 
+    Also used to change the flow of the document
+    
+STATIC:not positioned//it is a initial value which means elements are not positioned//
+RELATIVE :relative to current position,and it will not affet other elements or box
+ABSOLUTE:relative to containing element,elements with absolute positioning are relative to its closest positioned ancestor element,if that exist it relative to the body element
+FIXED:relative to the viewport,it will stays in the same spot even on page scroll
+STICKY:relative to containing element and viewport
+
+
+GRID AND FLEXBOX-used to create layouts
+
+FLEXBOX
+ items are alligned on a single axis.flex box only deals with one dimension at a time which means it will arrange row at one same time or column at same time.it will not arrange both
+GRID
+ are layout of 2-dimensional because it can arrange into rows and columns at a same time
+
+FLEX-DIRECTION
+ Determines the direction of the main axis
+ there are four values:row,row-reverse,column and column-reverse
+
+FLEX-DIRECTION:ROW
+-the main start 
+-the main end
+FLEX-WRAP:NOWRAP-meaning flex items will not wrap
+
+FLEX PROPERTIES
+
+  FLEX-BASIS-sets the initial size of the flex-items
+  FLEX-GROW-determines how items will expand if there is extra space in the container
+  FLEX-SHRINK-determines how item will shrink if there isnt enough space in the container
+for more-refer mdm  
+
+ALIGNING ITEMS IN A FLEX CONTAINER-useful when creating container with boxes
+ 
+JUSTIFY-CONTENT aligns items on the main axis
+ALIGN-ITEMS aligns items on the cross axis
+
+ .box{
+  display:flex;
+  align-items:center;
+  justify-content:center
+ }
+
+GRID
+
+these below will create explicit grid
+grid-template-columns
+grid-template-rows
+
+.grid-container{
+  display:grid;
+  grid-template-columns:100px 100px 100px;//3 columns//
+  grid-template-rows:100px 100px;//2 rows//
+}
+
+The fraction unit:fr
+
+same concept applies to rows and columns
+fr:represnts a fraction of the available space in the grid container
+ grid-template-columns:1fr 1fr 1fr;-it will all the 3 elements space equally
+ grid-template-columns:1fr 2fr 1fr;-it will take twice the amount of first and third track in 2 column
+  
+REPEAT()
+
+repeat([number of tracks],[size of tracks])
+
+grid -template-columns:1fr 1fr 1fr;
+//same as//
+grid-template-columns:repeat(3,1fr);
+
+grid-template-columns:50px repeat(2,1 fr)-our first column is 50px wide and next two columns are equally spaced
+
+ADDING GUTTERS WITH GAP(GUTTERS-GAP INBETWEEN GRIDS)-not cdeclare with fr
+
+gap:10px;//rows & columns//
+gap:10px 20px;//rows|columns//
+
+GAP-ROW AND GAP-COLUMN
+
+//shorthand//
+gap:10px 20px;
+
+//longhand//
+row-gap:10px;
+column-gap:20px;
+
+EXPLICIT GRID-only boxes  is explicit grid..not including extra spaces(explicit grids)
+IMPLICIT GRID-extra spaces in the in container after box
+
+ -if you dont know how many items your grid needss to display you can create whole grid using only an implicit grid
+ -if you know the minimum amount of grid items you could use implicit and explicit grid together
+ 
+IMPLICIT GRID
+
+ grid-auto-columns
+ grid-auto-rows
+
+ .grid-container{
+  display:grid;
+  grid-auto-columns:repeat(3, 1fr);//3 columns//
+  grid-auto-rows:100px 100px;//2 rows//
+ }
+
+ GRID PLACEMENT PROPERTIES
+
+ POSITIONING GRID ITEMS-must be applied to the grid items to determine their placement in the grid
+ 
+ grid-column =grid-column-start
+             =grid-column-end
+ grid-row=grid-row-start
+         =grid-row-end
+
+//longnghand//
+.grid-item-1{
+  grid-column-start: 2;
+  grid-column-end:4;
+}
+//shorthand//
+grid-column:2/4;
+
+//longhand//
+grid-row-start:1;
+grid-row-end:3;
+//shorthand//
+grid-row:1/3;
+
+for more:refer css grid
+
+RESPONSIVE DESIGN:
+
+ Key ingredientd
+  fluid layout
+  flexible images
+  media queries
+
+  MEDIA QUERIES
+
+  (@media-media rule),screen-(media type)max-width:1000px(media future)
+   @media screen and (max-width:1000px)
+   h1{
+    font-size:16px;
+   }
+
+  MEDIA TYPES
+
+  ALL-matches to all types
+  print-matches to printers and print-related displays
+  speech-matches to screen reading devices that"read out" a page
+  screen-matches all devices that aren't categorized as print or speech
+
+  @media all{..},media{..}-both queries target all media type
+
+  @media print{..}
+  @media speech{...}
+  @media screen{...}
+
+MEDIA FEATURES
+
+ media features are used to test a specific feature of the device
+
+@media(width: 480px){...}
+@media (orientation :landscape){...}
+ 
+ use keyword "and" to combine media features with media types
+
+@media(orientation:landscape){...}
+@media screen and (orientation landscape){...}
+
+for more refer:mdn
+
+BREAKPOINTS
+
+ 320PX:mobile portrait
+ 480px:mobile landscape
+ 600px:small tablet
+ 768px:tablet portrait
+ 940-1024px:tablet landscape
+ 1280px and greater:desktop,laptop
+
+ //exact width//
+ @media (width:360px){...}
+
+//mininum width-360px or larger//
+@media (min-width:360px){...}
+
+//maximum width-360px or smaller//
+@media(max-width:360px){..}
+.......
+///800px and smaller//
+@media (max-width:800px){...}
+
+//800px and larger//
+@media (min-width:800px){...}-the scondd comes declaration will take precedence
+
+deskop first
+//changes made for smaller screens//
+@media(max-width:800px){body(...)}
+@media(max-width:400px){body(..)}
+
+mobile first
+//changes made for larger screens//
+@media(min-width:800px){body(..)}
+@media{min-width:1200px}{body(..)}
+
+create a range
+
+//this applies a range of 400px to 800px//
+
+@media(min-width:400px) and (max-width:800px){body(...)}
+........................................................
+
+position
+
+/*1. static -basic default positioning poroperty(it will not change anything)
+  2. relative-LTRB able to change change  (additional properties-left,top,right,bottom)
+  3. absolute-box will come out totally out of parent box,to avoid this coming out of parent box,we will use position relative in main(additional properties-LTRB and  relative)
+  4. fixed-in overall doc, we can able to fix the box anywhere
+  5. sticky-when we scroll down means it will automattically come to up and when go to original position means it will go and stick in original position
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
